@@ -13,7 +13,7 @@ Defines how the border of sample is handled. For instance, for a kernel of 3 wit
 ### 2D convilution using a kernel size of 3, stride of 1 and no padding
 <figure>
   <p align="center">
-  <img src=Image/conv.gif  with=30%/>
+  <img src=../Images/conv.gif  with=30%/>
   </p>
 </figure>
 
@@ -25,7 +25,7 @@ From the simplest convolution maps, we can see that after convolution operation,
 
 <figure>
   <p align="center">
-  <img src=Images/convpadding1.gif  with=30%/>
+  <img src=../Images/convpadding1.gif  with=30%/>
   </p>
 </figure>
 
@@ -40,7 +40,7 @@ Stride is the step size, which means the distance between two convolution operat
 ### Convolution with no padding and strike = 2
 <figure>
   <p align="center">
-  <img src=Images/convNopaddingStrike2.gif  with=50%/>
+  <img src=../Images/convNopaddingStrike2.gif  with=50%/>
   </p>
 </figure>
 
