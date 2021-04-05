@@ -14,13 +14,9 @@ from NetLauncher import netLauncher
 import matplotlib.pyplot as plt
 
 # data paths normalized 35 sec  with 5sec of sliding and new valid windows rules
-X_path = '../Datasets/senny_bis_tr_0.7_nbF_95_FWS_5_SWS_5_PSL_25_PSR_5_usr_0_osr_0_normalized_physi_new_valid_test_/train/trainX.mat'
-Y_path = '../Datasets/senny_bis_tr_0.7_nbF_95_FWS_5_SWS_5_PSL_25_PSR_5_usr_0_osr_0_normalized_physi_new_valid_test_/train/trainY.mat'
-validX_path = '../Datasets/senny_bis_tr_0.7_nbF_95_FWS_5_SWS_5_PSL_25_PSR_5_usr_0_osr_0_normalized_physi_new_valid_test_/validation/_{0}/validX.mat'
-validY_path = '../Datasets/senny_bis_tr_0.7_nbF_95_FWS_5_SWS_5_PSL_25_PSR_5_usr_0_osr_0_normalized_physi_new_valid_test_/validation/_{0}/validY.mat'
-testX_path = '../Datasets/senny_bis_tr_0.7_nbF_95_FWS_5_SWS_5_PSL_25_PSR_5_usr_0_osr_0_normalized_physi_new_valid_test_/test/_{0}/testX.mat'
-testY_path = '../Datasets/senny_bis_tr_0.7_nbF_95_FWS_5_SWS_5_PSL_25_PSR_5_usr_0_osr_0_normalized_physi_new_valid_test_/test/_{0}/testY.mat'
-
+train_path = 'data_batch_1'
+valid_path = 'data_batch_2'
+test_path  = 'test_batch'
 
 # Hyperparameters
 model_name = "CNN9"
@@ -42,8 +38,8 @@ best_lr = 0
 
 
 ID = ""
-spl = X_path.split('/')
-dataset_ID = spl[2]
+spl = train_path.split('/')
+dataset_ID = spl[0]
 
 
 # grid search
@@ -58,8 +54,8 @@ for batch_size in batches:
 
                 # if binary classes, ROC curves
                 if binary_class:
-                    fpr, tpr = netLauncher(num_epochs, batch_size, learning_rate, dropout_rate, weighted, model_name, X_path, Y_path, validX_path, validY_path,
-                                    testX_path, testY_path, binary_class)
+                    fpr, tpr = netLauncher(num_epochs, batch_size, learning_rate, dropout_rate, weighted, model_name, train_path, valid_path,
+                                    test_path, binary_class)
 
                     # unique string identifying the model
                     ID = model_name + "_" + str(batch_size) + "_" + str(dropout_rate) + "_" + str(weighted) + "_" + str(learning_rate)
@@ -67,8 +63,8 @@ for batch_size in batches:
                     # plt.plot(fpr, tpr, label= ID + ".png")
 
                 else:
-                    val_precision = netLauncher(num_epochs, batch_size, learning_rate, dropout_rate, weighted, model_name, X_path, Y_path, validX_path, validY_path,
-                                    testX_path, testY_path, binary_class)
+                    val_precision = netLauncher(num_epochs, batch_size, learning_rate, dropout_rate, weighted, model_name, train_path, valid_path,
+                                    test_path, binary_class)
 
                     if val_precision > best_val_precision:
                         best_val_precision = val_precision

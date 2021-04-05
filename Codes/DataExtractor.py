@@ -5,9 +5,9 @@ import os.path
 import pickle
 
 # from a X and Y dataset path, create 2 numpy array of X and Y values
-def DataExtractor(X_path, Y_path):
+def DataExtractor(path):
 
-    with open('data_batch_1', 'rb') as fo:
+    with open(path, 'rb') as fo:
         dict = pickle.load(fo, encoding='bytes')
 
     i = 0

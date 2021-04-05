@@ -38,8 +38,8 @@ from tqdm import tqdm
 import numpy as np
 
 
-def netLauncher(num_epochs, batch_size, learning_rate, dropout_rate, weighted, model_name, X_path, Y_path, validX_path, validY_path,
-                testX_path, testY_path, binary_class):
+def netLauncher(num_epochs, batch_size, learning_rate, dropout_rate, weighted, model_name, train_path , valid_path,
+                test_path, binary_class):
 
     # make data go through the net
     # random_data = torch.rand((10, 1, 310))
@@ -52,20 +52,20 @@ def netLauncher(num_epochs, batch_size, learning_rate, dropout_rate, weighted, m
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
     # training set
-    train_data = deep_evaluator.loadDataset(X_path, Y_path, batch_size, "training", binary_class)
+    train_data = deep_evaluator.loadDataset(train_path, batch_size, "training", binary_class)
 
     # buidling validation set ( dans mon cas j'avais plusieurs files, à voir ici) HACKATON VALIDATION PATH
-    valid_data = []
-    for i in range(95):
-        valid_f_X_path = validX_path.format(i)
-        valid_f_Y_path = validY_path.format(i)
-        if os.path.isfile(valid_f_X_path):
-            valid_data += [deep_evaluator.loadDataset(valid_f_X_path, valid_f_Y_path, batch_size, "validation", binary_class)]
+    # valid_data = []
+    # for i in range(95):
+    #     valid_f_X_path = validX_path.format(i)
+    #     valid_f_Y_path = validY_path.format(i)
+    #     if os.path.isfile(valid_f_X_path):
+    #         valid_data += [deep_evaluator.loadDataset(valid_f_X_path, valid_f_Y_path, batch_size, "validation", binary_class)]
 
-    valid_data = deep_evaluator.loadDataset(X_path, Y_path, batch_size, "validation", binary_class)# HACKATON valid data
+    valid_data = deep_evaluator.loadDataset(valid_path, batch_size, "validation", binary_class)# HACKATON valid data
 
     # IDs of both model and dataset used for saving trained model under unique name
-    dataset_ID = validX_path.split('/')
+    dataset_ID = validX_path.split('/') # HACKATHON : mettre ici un système pour différencier les datasets
     dataset_ID =  dataset_ID[2]
     model_ID = model_name +"_" +str(batch_size) + "_" + str(dropout_rate) + "_" + str(weighted) + "_" + str(learning_rate) + "_" + str(num_epochs) + "_"
     model_name_save = model_ID + dataset_ID + '.pt'

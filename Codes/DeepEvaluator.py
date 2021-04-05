@@ -48,8 +48,8 @@ class DeepEvaluator():
         # defining the number of epochs
         self.n_epochs = nb_epochs
 
-        self.classes = ('sleep', 'Rva',
-           'Hpop', 'CA', 'Aobs', 'Limd', 'Amix', 'Micev', '9', '10')
+        self.classes = ('1', '2',
+           '3', '4', '5', '6', '7', '8', '9', '10')
 
         if binary_class:
             self.classes = ('sleep', 'micev')
@@ -121,22 +121,23 @@ class DeepEvaluator():
     # the batches produced by the DataLoader will have some corrected balance between the majority class and the minority one
 
     # ARGUMENTS :
-    # X_path is the path to the  .mat file that contains the X values
-    # Y_path is the path to the  .mat file that contains the Y values
+    # path is the path to the dataset
     # batch_size is the size each mini batch in the DataLoader should have
     # set is a string that can take three values : "training", "validation" and "testing". It precises the usage of the data being loaded
     # binary_class :  boolean indicating wether or not the dataset should consider just 2 ckasses or the total diversity
 
     # RETURNS :
     # a pytorch DataLoader object
-    def loadDataset(self, X_path, Y_path, batch_size, set, binary_class):
+    def loadDataset(self, path, batch_size, set, binary_class):
 
         # loading data !!! HACKATHON : extraire les data de facon appropriée ici
-        X,Y = DataExtractor(X_path, Y_path)
+        X,Y = DataExtractor(path)
 
         # need to format data from numpy ndarray into tensors for TensorDataset
         X = torch.tensor(X)
         y = torch.tensor(Y)
+
+        print(y)
 
         if set == "training":
 
@@ -161,6 +162,10 @@ class DeepEvaluator():
 
             class_weights = torch.FloatTensor(weights).to(device)
             self.criterion = CrossEntropyLoss(weight=class_weights)
+
+            #print the proportions of each class in the dataset HACKATHON
+            print("proportions of each individual class in the training set")
+            print(self.training_data_diversity/np.sum(self.training_data_diversity))
 
         if set == "testing":
             # testing sets are build from several individual files : need to count the diversity of classes one file
