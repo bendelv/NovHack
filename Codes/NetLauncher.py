@@ -54,16 +54,17 @@ def netLauncher(num_epochs, batch_size, learning_rate, dropout_rate, weighted, m
     # training set
     train_data = deep_evaluator.loadDataset(X_path, Y_path, batch_size, "training", binary_class)
 
-    # buidling validation set
+    # buidling validation set ( dans mon cas j'avais plusieurs files, à voir ici) HACKATON VALIDATION PATH
     valid_data = []
-
     for i in range(95):
         valid_f_X_path = validX_path.format(i)
         valid_f_Y_path = validY_path.format(i)
         if os.path.isfile(valid_f_X_path):
             valid_data += [deep_evaluator.loadDataset(valid_f_X_path, valid_f_Y_path, batch_size, "validation", binary_class)]
 
-    # IDs
+    valid_data = deep_evaluator.loadDataset(X_path, Y_path, batch_size, "validation", binary_class)# HACKATON valid data
+
+    # IDs of both model and dataset used for saving trained model under unique name
     dataset_ID = validX_path.split('/')
     dataset_ID =  dataset_ID[2]
     model_ID = model_name +"_" +str(batch_size) + "_" + str(dropout_rate) + "_" + str(weighted) + "_" + str(learning_rate) + "_" + str(num_epochs) + "_"
@@ -116,10 +117,6 @@ def netLauncher(num_epochs, batch_size, learning_rate, dropout_rate, weighted, m
             if binary_class:
 
                 perf_eval = PerfEvaluator(deep_evaluator)
-
-                # FOR OVERFIT TESTS
-                # NEXT STEP IS PerformanceEvaluator
-                #precision = perf_eval.evaluate(train_data, verbose = False)
 
                 precision, val_loss = perf_eval.evaluate(valid_data, verbose = True)
             else:

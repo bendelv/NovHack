@@ -6,7 +6,6 @@ from torch.autograd import Variable
 from torch.nn import Linear, Sequential, ReLU, Conv1d, MaxPool1d, BatchNorm1d, Module, CrossEntropyLoss, MSELoss
 from torch.optim import Adam, SGD
 from torch.utils.data import TensorDataset, DataLoader
-from ClassHandling import classesMicevAndSleep
 
 from DataExtractor import DataExtractor
 from Nets import FC4,CNN9
@@ -50,7 +49,7 @@ class DeepEvaluator():
         self.n_epochs = nb_epochs
 
         self.classes = ('sleep', 'Rva',
-           'Hpop', 'CA', 'Aobs', 'Limd', 'Amix', 'Micev')
+           'Hpop', 'CA', 'Aobs', 'Limd', 'Amix', 'Micev', '9', '10')
 
         if binary_class:
             self.classes = ('sleep', 'micev')
@@ -83,28 +82,7 @@ class DeepEvaluator():
         if model_name == "FC4":
             return FC4(dropout_rate).to(device)
 
-    # modifies the data labels so that only 2 classes exist : 0 ( healthy sleep) and 1 ( event).
-    # all labels that aren't sleep (0) are modified to have a common label (1)
-    def sleepVSAll(self, Y):
 
-        for i in range(len(Y)):
-            if Y[i] != 0:
-                Y[i] = 1
-
-        return Y
-
-    # modifies the data labels so that only 2 classes exist : 0 (sleep and random events) and 1 (micev).
-    # all labels that aren't micev (7) are modified to have a common label (0). Micev labeled events are relabeled with 1
-    def micevVSAll(self, Y):
-
-        for i in range(len(Y)):
-            if Y[i] != 7:
-                Y[i] = 0
-
-            else:
-                Y[i] = 1 # micev
-
-        return Y
 
     # counts the amount of samples of each class present in the tensor input.
     # returns a list of length "nb_of_classes" where the ith element of the list
@@ -153,22 +131,8 @@ class DeepEvaluator():
     # a pytorch DataLoader object
     def loadDataset(self, X_path, Y_path, batch_size, set, binary_class):
 
-        # loading  data
+        # loading data !!! HACKATHON : extraire les data de facon appropriée ici
         X,Y = DataExtractor(X_path, Y_path)
-
-        # only micev classes and other classes dichotomy now
-        if binary_class:
-
-            if set != "training":
-                # y = self.sleepVSAll(y)
-                # changes all labels to either sleep or micev
-                Y = self.micevVSAll(Y)
-            if set ==  "training":
-                # deletes all elements of the training set that are not sleep or micev
-                #X, Y = classesMicevAndSleep(X, Y)
-
-                # changes all labels to either sleep or micev
-                Y = self.micevVSAll(Y)
 
         # need to format data from numpy ndarray into tensors for TensorDataset
         X = torch.tensor(X)
@@ -231,14 +195,15 @@ class DeepEvaluator():
             return data
 
         # balanced sampling in the batches (controlled proportion of the samples of class 1 and 0 in each batch)
-        labels = np.array(Y[:,0])
+        labels = np.array(Y[:,0])# all individual samples y values
         labels = labels.astype(int) # get labels of data in int format
 
+        # HACKATON here need to reread doc and attribute weights that would make sense in our case
         weight_majority = 2 / self.training_data_diversity[0] # weight attributed to samples from the class of the majority
         weight_minority = 1/ self.training_data_diversity[1] # weight attributed to samples from the class of the minority
 
         samples_weights = np.array([weight_majority, weight_minority]) # each individual sample of the data is attributed a weight
-        weights = samples_weights[labels]
+        weights = samples_weights[labels] # each individual sample gets the weight attributed to its label
 
         sampler = torch.utils.data.sampler.WeightedRandomSampler(weights, num_samples = len(labels), replacement = True)
 
