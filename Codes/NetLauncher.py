@@ -65,8 +65,8 @@ def netLauncher(num_epochs, batch_size, learning_rate, dropout_rate, weighted, m
     valid_data = deep_evaluator.loadDataset(valid_path, batch_size, "validation", binary_class)# HACKATON valid data
 
     # IDs of both model and dataset used for saving trained model under unique name
-    dataset_ID = validX_path.split('/') # HACKATHON : mettre ici un système pour différencier les datasets
-    dataset_ID =  dataset_ID[2]
+    dataset_ID = train_path.split('/') # HACKATHON : mettre ici un système pour différencier les datasets
+    dataset_ID =  dataset_ID[0]
     model_ID = model_name +"_" +str(batch_size) + "_" + str(dropout_rate) + "_" + str(weighted) + "_" + str(learning_rate) + "_" + str(num_epochs) + "_"
     model_name_save = model_ID + dataset_ID + '.pt'
 

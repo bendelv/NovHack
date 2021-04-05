@@ -200,7 +200,7 @@ class DeepEvaluator():
             return data
 
         # balanced sampling in the batches (controlled proportion of the samples of class 1 and 0 in each batch)
-        labels = np.array(Y[:,0])# all individual samples y values
+        labels = np.array(Y[:])# all individual samples y values
         labels = labels.astype(int) # get labels of data in int format
 
         # HACKATON here need to reread doc and attribute weights that would make sense in our case
@@ -208,6 +208,9 @@ class DeepEvaluator():
         weight_minority = 1/ self.training_data_diversity[1] # weight attributed to samples from the class of the minority
 
         samples_weights = np.array([weight_majority, weight_minority]) # each individual sample of the data is attributed a weight
+
+        samples_weights = np.array([1/10,1/10,1/10,1/10,1/10,1/10,1/10,1/10,1/10,1/10]) # HACKATHON : juste pour faire marcher le schmilblick
+
         weights = samples_weights[labels] # each individual sample gets the weight attributed to its label
 
         sampler = torch.utils.data.sampler.WeightedRandomSampler(weights, num_samples = len(labels), replacement = True)
@@ -224,6 +227,7 @@ class DeepEvaluator():
 
         # getting the training set
         X_train = Variable(train_X).unsqueeze(1).float()
+        
         y_train = Variable(train_y).long().squeeze(1)
 
         # prediction for training and validation set
