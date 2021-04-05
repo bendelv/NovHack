@@ -210,7 +210,7 @@ class CNN9(nn.Module):
             )
 
             self.fcModel = Sequential(
-                nn.Linear(3080,2048),
+                nn.Linear(30300,2048),
                 nn.Dropout(dropout_rate),
                 ReLU(inplace=True),
 
@@ -230,7 +230,7 @@ class CNN9(nn.Module):
                 nn.Dropout(dropout_rate),
                 ReLU(inplace=True),
 
-                nn.Linear(128,2),
+                nn.Linear(128,10),
                 nn.Dropout(dropout_rate),
 
             )

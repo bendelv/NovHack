@@ -120,6 +120,8 @@ def netLauncher(num_epochs, batch_size, learning_rate, dropout_rate, weighted, m
 
                 precision, val_loss = perf_eval.evaluate(valid_data, verbose = True)
             else:
+                
+                perf_eval = PerfEvaluator(deep_evaluator)
                 precision, val_loss = perf_eval.evaluate(valid_data, verbose = False)
 
             #compute val loss

@@ -24,7 +24,7 @@ num_epochs = 10
 binary_class = False
 
 #hyperparam of grid search
-batches = [128] #?
+batches = [64] #?
 dropouts = [0] # only for regularization ?
 weights = [False]
 lr = [0.0001] # ?

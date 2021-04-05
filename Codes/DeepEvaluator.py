@@ -137,8 +137,6 @@ class DeepEvaluator():
         X = torch.tensor(X)
         y = torch.tensor(Y)
 
-        print(y)
-
         if set == "training":
 
             self.training_data_diversity = self.dataDiversityFromTensors([y])
@@ -227,8 +225,7 @@ class DeepEvaluator():
 
         # getting the training set
         X_train = Variable(train_X).unsqueeze(1).float()
-        
-        y_train = Variable(train_y).long().squeeze(1)
+        y_train = Variable(train_y)
 
         # prediction for training and validation set
         output_train = self.model(X_train)
