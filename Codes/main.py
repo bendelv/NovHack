@@ -20,7 +20,7 @@ test_path  = 'test_batch'
 
 # Hyperparameters
 model_name = "CNN9"
-num_epochs = 10
+num_epochs = 2
 binary_class = False
 
 #hyperparam of grid search
