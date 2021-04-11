@@ -1,0 +1,166 @@
+class_id,name,image_path,category,description
+0,unknown,,,
+1,d1f,be/d1f.png,obligation,obligation tourner fleche
+2,e17,be/e17.png,stationnement,zone parking max 35 tonnes
+3,c1,be/c1.png,interdiction,sens interdit tout conducteur
+4,b1,be/b1.png,priorite,ceder passage
+5,zc43b,be/zc43b.png,interdiction,fin zone limitation vitesse
+6,b15,be/b15.png,priorite,priorite passage
+7,c43,be/c43.png,interdiction,interdiction circuler vitesse superieure celle qui indiquee
+8,e9a-rolstoel,be/e9a-rolstoel.png,stationnement,parking handicape handicapes chaise roulante
+9,b15c,be/b15c.png,priorite,priorite carrefour prioritaire
+10,iic,be/iic.png,travaux,travaux rouge blanc
+11,c21,be/c21.png,interdiction,acces interdit conducteurs vehicules dont masse charge depasse masse indiquee
+12,typ8,be/typ8.png,autre,route prioritaire tournant
+13,e9e,be/e9e.png,stationnement,parking sur trottoir accotement
+14,a41,be/a41.png,danger,passage niveau barrieres
+15,f49,be/f49.png,indication,passage pietons
+16,iib,be/iib.png,travaux,travaux rouge blanc
+17,f4b,be/f4b.png,indication,fin zone laquelle vitesse limitee 30 km heure
+18,a51,be/a51.png,danger,danger non defini par symbole special
+19,f1a_h,be/f1a_h.png,indication,commencement agglomeration horizontal
+20,vb,be/vb.png,travaux,travaux fleche rouge deux sens
+21,b17,be/b17.png,priorite,carrefour priorite droite applicable
+22,f50,be/f50.png,indication,passage conducteurs bicyclettes cyclomoteurs deux roues
+23,gia,be/gia.png,dessous,dessous
+24,e3,be/e3.png,stationnement,arr\u00eat stationnement interdits
+25,fle-a,be/fle-a.png,indication,fleche haut
+26,b15f,be/b15f.png,priorite,priorite carrefour prioritaire
+27,d7,be/d7.png,obligation,piste cyclable obligatoire
+28,f3a_h,be/f3a_h.png,indication,fin agglomeration horizontal
+29,a45,be/a45.png,danger,passage niveau voie unique
+30,f27,be/f27.png,indication,signal preavis
+31,f45,be/f45.png,indication,voie issue
+32,ze9agse,be/ze9agse.png,stationnement,fin zone parking disque stationnement bleue
+33,a15,be/a15.png,danger,chaussee glissante
+34,ze9ags,be/ze9ags.png,stationnement,zone parking disque stationnement bleue
+35,a23,be/a23.png,danger,endroit specialement frequente par enfants
+36,f4a,be/f4a.png,indication,commencement zone laquelle vitesse limitee 30 km heure
+37,a1c,be/a1c.png,danger,virage dangereux double virage succession plus deux virages premier gauche
+38,zc43,be/zc43.png,interdiction,zone limitation vitesse
+39,a31,be/a31.png,danger,travaux
+40,ib1,be/ib1.png,travaux,travaux rouge blanc
+41,a27,be/a27.png,danger,traversee gros gibier
+42,b5,be/b5.png,priorite,marquer arret ceder passage
+43,d1d,be/d1d.png,obligation,obligation aller \u00e0 droite fleche
+44,f39,be/f39.png,indication,signal preavis annoncant deviation
+45,a14,be/a14.png,danger,dispositif sureleve
+46,c3,be/c3.png,interdiction,acces interdit deux sens tout conducteur
+47,f87,be/f87.png,indication,dispositif sureleve
+48,e1,be/e1.png,stationnement,stationnement interdit
+49,f35,be/f35.png,indication,signal direction centre sportif lieu vocation touristique agrement loisirs attractions parc culturel monument site remarquable syndicat d'initiative
+50,f13,be/f13.png,indication,signal annoncant fleches sur chaussee prescrivant choix bande circulation
+51,c43-50-km,be/c43-50-km.png,interdiction,limitation vitesse 50
+52,f37,be/f37.png,indication,signal direction auberge jeunesse lieux hebergement terrain camping caravaning restaurant village vacances
+53,a1a,be/a1a.png,danger,virage dangereux virage gauche
+54,d5,be/d5.png,obligation,sens giratoire obligatoire
+55,d1a,be/d1a.png,obligation,obligation suivre directions indiquees par fleches tout droit
+56,c43-50,be/c43-50.png,interdiction,limitation vitesse 50
+57,m2,be/m2.png,additionnel,sauf velo excepte
+58,ia1,be/ia1.png,travaux,travaux rouge blanc
+59,a1b,be/a1b.png,danger,virage dangereux virage droite
+60,b9,be/b9.png,priorite,voie prioritaire
+61,c31right,be/c31right.png,interdiction,prochain carrefour interdiction tourner sens indiques par fleche droite
+62,c23,be/c23.png,interdiction,acces interdit conducteurs vehicules destines utilises au transport choses
+63,f34a,be/f34a.png,indication,signal direction proximite equipements etablissements publics interet general particulier
+64,e19,be/e19.png,stationnement,fin zone parking max 35 tonnes
+65,a13,be/a13.png,danger,cassis dos ane
+66,f34b2,be/f34b2.png,indication,signal direction: itineraire conseille categories determinees d'usagers
+67,b21,be/b21.png,priorite,passage etroit priorite passage par rapport conducteurs venant sens oppose
+68,f34c1,be/f34c1.png,indication,signal direction itineraire conseille categories determinees usagers vers destination touristique
+69,e9b,be/e9b.png,stationnement,parking voiture
+70,b19,be/b19.png,priorite,passage etroit obligation ceder passage conducteurs venant sens oppose
+71,a7c,be/a7c.png,danger,retrecissement chaussee
+72,f33a,be/f33a.png,indication,signal direction distance
+73,d1c,be/d1c.png,obligation,obligation gauche fleche
+74,a25,be/a25.png,danger,passage conducteurs bicyclettes cyclomoteurs deux roues endroit o\u00f9 ces conducteurs debouchent piste cyclable sur chaussee
+75,fle-d,be/fle-d.png,indication,double fleche
+76,va,be/va.png,travaux,travaux fleche rouge droite
+77,f29,be/f29.png,indication,signal direction
+78,f19,be/f19.png,indication,voie publique sens unique
+79,c43-30,be/c43-30.png,interdiction,limitation vitesse 30
+80,m3,be/m3.png,additionnel,sauf excepe moto mobilette velo
+81,f45b,be/f45b.png,indication,voie issue excepte pietons cyclistes
+82,fle-b,be/fle-b.png,indication,fleche bas
+83,v,be/v.png,travaux,travaux fleche rouge
+84,iiia,be/iiia.png,travaux,travaux rouge blanc
+85,c31left,be/c31left.png,interdiction,prochain carrefour interdiction tourner sens indiques par fleche gauche
+86,giv_a,be/giv_a.png,dessous,dessous
+87,f17,be/f17.png,indication,indication bandes circulation chaussee parmi lesquelles reservee autobus
+88,ivms1_30,be/IVMS1_30.png,autre,Zone 30 intelligente adaptative
+89,f3b_v,be/f3b_v.png,indication,fin agglomeration vertical
+90,c35,be/c35.png,interdiction,partir signal prochain carrefour inclus interdiction depasser par gauche vehicule attele vehicule plus deux roues
+91,tr_b,be/tr_b.png,touristique,touristique
+92,a21,be/a21.png,danger,passage pietons
+93,f43,be/f43.png,indication,signal localite
+94,d1b_right,be/d1b_right.png,obligation,obligation tourner droite fleche
+95,f47,be/f47.png,indication,fin travaux
+96,a7a,be/a7a.png,danger,retrecissement chaussee
+97,a33,be/a33.png,danger,signaux lumineux circulation
+98,f25,be/f25.png,indication,signal preavis
+99,e9a-schijf,be/e9a-schijf.png,stationnement,parking disque stationnement
+100,c25,be/c25.png,interdiction,acces interdit conducteurs vehicules trains vehicules longueur superieure indiquee
+101,d1b_left,be/d1b_left.png,obligation,obligation tourner gauche fleche
+102,ftsrt_a,be/ftsrt_a.png,touristique,touristique
+103,iv6,be/iV6.png,autre,poteau blanc
+104,f1b_v,be/f1b_v.png,indication,commencement agglomeration vertical
+105,itrs_bis,be/ITRS_bis.png,autre,autre
+106,a47,be/a47.png,danger,passage niveau deux plusieurs voies
+107,a1d,be/a1d.png,danger,virage dangereux double virage succession plus deux virages premier droite
+108,m4,be/m4.png,additionnel,velo double sens deux
+109,ftsrt_b,be/ftsrt_b.png,touristique,touristique
+110,c43-70-km,be/c43-70-km.png,interdiction,limitation vitesse 70
+111,ib2,be/ib2.png,travaux,travaux
+112,f97,be/f97.png,indication,signal indiquant retrecissement ayant importance bande circulation
+113,f59,be/f59.png,indication,annonce parking
+114,a49,be/a49.png,danger,croisement voie publique par plusieurs voies ferrees etablies sur chaussee
+115,a39,be/a39.png,danger,circulation admise deux sens apres section chaussee sens unique
+116,f41,be/f41.png,indication,signal direction itineraire deviation
+117,m9,be/m9.png,additionnel,velo double deux sens
+118,herhaling,be/herhaling.png,dessous,dessous
+119,e9a,be/e9a.png,stationnement,parking
+120,iv2_b,be/iv2_b.png,autre,poteau jaune
+121,wrt_b,be/wrt_b.png,touristique,touristique
+122,f18,be/f18.png,indication,indication site special franchissable reserve circulation vehicules services reguliers transport commun
+123,f25r,be/f25r.png,indication,rond point
+124,fle-c,be/fle-c.png,indication,fleche haut 20 m metres
+125,i-hek,be/i-hek.png,travaux,travaux barriere
+126,d3b,be/d3b.png,obligation,obligation suivre directions indiquees par fleches tout droit droite
+127,if13_3,be/if13_3.png,autre,autre
+128,iia,be/iia.png,travaux,travaux rouge blanc
+129,iid,be/iid.png,travaux,travaux rouge blanc
+130,f31,be/f31.png,indication,signal direction
+131,iu4_a,be/iu4_a.png,autre,autre
+132,c43-90,be/c43-90.png,interdiction,limitation vitesse 90
+133,d3a,be/d3a.png,obligation,obligation aller tout droit tourner gauche
+134,a7b,be/a7b.png,danger,retrecissement chaussee
+135,b15e,be/b15e.png,priorite,priorite carrefour prioritaire
+136,c6,be/c6.png,interdiction,acces interdit conducteurs vehicules moteur quatre roues construits terrain non praticable carrosserie ouverte guidon comme sur motocyclette selle
+137,e9d,be/e9d.png,stationnement,parking car bus
+138,iv5,be/iv5.png,autre,poteau jaune
+139,f34b1,be/f34b1.png,indication,signal direction itineraire conseille categories determinees usagers
+140,ze9btn,be/ze9btn.png,stationnement,zone parking payant
+141,rolstoel,be/rolstoel.png,additionnel,chaise roulante handicape
+142,f79,be/f79.png,indication,signal preavis annon\u00e7ant reduction du nombre bandes circulation
+143,c46,be/c46.png,interdiction,fin toutes interdictions locales imposees vehicules mouvement
+144,iv1,be/iv1.png,autre,poteau jaune
+145,iu4_b,be/iu4_b.png,autre,autre
+146,iu2_b,be/iu2_b.png,autre,autre
+147,f25m,be/f25m.png,indication,embranchement sortie
+148,maavrij,be/maavrij.png,additionnel,du lundi au vendredi
+149,e7,be/e7.png,stationnement,stationnement interdit du 16 fin du mois
+150,gxi,be/gxi.png,autre,fleche oblique
+151,f15bis,be/f15bis.png,indication,directions
+152,tr_c,be/tr_c.png,touristique,touristique
+153,m10,be/m10.png,additionnel,sauf velo excepte
+154,id,be/id.png,travaux,travaux rouge blanc
+155,b11,be/b11.png,priorite,fin voie prioritaire
+156,f23a,be/f23a.png,indication,numero route ordinaire
+157,m5,be/m5.png,additionnel,velo double sens deux moto mobilette
+158,f23c,be/f23c.png,indication,numero route internationale
+159,f21,be/f21.png,indication,passage autorise droite gauche
+160,c27,be/c27.png,interdiction,acces interdit conducteurs vehicules largeur superieure indiquee
+161,iv2,be/iv2.png,autre,poteau jaune
+162,payant,be/payant.png,autre,payant
+163,f50bis,be/f50bis.png,indication,signal indiquant conducteurs qui changent direction que conducteurs bicyclettes cyclomoteurs deux roues suivent meme voie publique
+164,c29,be/c29.png,interdiction,acces interdit conducteurs vehicules hauteur superieure indiquee
