@@ -189,7 +189,7 @@ class CNN9(nn.Module):
 
             self.cnnModel = Sequential(
                 # First layer
-                nn.Conv1d(1, 10, kernel_size = 30),
+                nn.Conv1d(1, 10, kernel_size = 5),
                 # nn.BatchNorm1d(10),
                 nn.Dropout(dropout_rate),
                 ReLU(inplace=True),
@@ -201,16 +201,17 @@ class CNN9(nn.Module):
                 ReLU(inplace=True),
 
                 # Third layer
-                nn.Conv1d(10, 10, kernel_size = 5),
+                nn.Conv1d(10, 10, kernel_size = 30),
                 # nn.BatchNorm1d(10),
                 nn.Dropout(dropout_rate),
                 ReLU(inplace=True),
 
 
+
             )
 
             self.fcModel = Sequential(
-                nn.Linear(3080,2048),
+                nn.Linear(30300,2048),
                 nn.Dropout(dropout_rate),
                 ReLU(inplace=True),
 
@@ -230,7 +231,7 @@ class CNN9(nn.Module):
                 nn.Dropout(dropout_rate),
                 ReLU(inplace=True),
 
-                nn.Linear(128,2),
+                nn.Linear(128,10),
                 nn.Dropout(dropout_rate),
 
             )

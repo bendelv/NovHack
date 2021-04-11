@@ -47,16 +47,14 @@ class PerfEvaluator():
         predlist=torch.zeros(0,dtype=torch.long, device='cpu')
         lbllist=torch.zeros(0,dtype=torch.long, device='cpu')
 
-        for patient_data in data:
-            # evaluate one test data
-            for x_batch, y_batch in patient_data:
+        for x_batch, y_batch in data:
 
         # FOR OVERFIT TESTS
         #for x_batch, y_batch in data:
 
                 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
                 x_batch = Variable(x_batch).unsqueeze(1).float()
-                y_batch = Variable(y_batch).long().squeeze(1)
+                y_batch = Variable(y_batch)
 
                 x_batch = x_batch.to(device)
                 y_batch = y_batch.to(device)
@@ -75,8 +73,8 @@ class PerfEvaluator():
                 predlist=torch.cat([predlist,predicted.view(-1).cpu()])
                 lbllist=torch.cat([lbllist,y_batch.view(-1).cpu()])
 
-                conf_mat=confusion_matrix(lbllist.numpy(), predlist.numpy())
-                precision, recall, thresholds = precision_recall_curve(lbllist.numpy(), predlist.numpy())
+                # conf_mat=confusion_matrix(lbllist.numpy(), predlist.numpy())
+                # precision, recall, thresholds = precision_recall_curve(lbllist.numpy(), predlist.numpy())
 
                 total += y_batch.size(0)
                 correct += (predicted == y_batch).sum().item()

@@ -2,18 +2,22 @@
 import numpy as np
 import h5py
 import os.path
+import pickle
 
 # from a X and Y dataset path, create 2 numpy array of X and Y values
-def DataExtractor(X_path, Y_path):
+def DataExtractor(path):
 
-    X = h5py.File(X_path, 'r')
-    Y = h5py.File(Y_path, 'r')
+    with open(path, 'rb') as fo:
+        dict = pickle.load(fo, encoding='bytes')
 
-    for k,v in X.items():
-        X_out = np.array(v).T
+    i = 0
 
-    for k,v in Y.items():
-        Y_out = np.array(v).T
+    for key in dict:
+        if i == 1:
+            Y_out = dict[key]
+        if i == 2:
+            X_out = dict[key]
+        i = i+1
 
     return [X_out,Y_out]
 
